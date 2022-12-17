@@ -53,28 +53,19 @@
         android:textSize="15dp"
         android:textColor="@color/black"/>
 
-    <Button
+    <ImageButton
         android:layout_width="100dp"
         android:layout_height="34dp"
         android:layout_marginTop="310dp"
         android:layout_marginLeft="50dp"
-        android:background="@drawable/border_radius">
-    </Button>
-
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="310dp"
-        android:src="@drawable/star" />
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="34dp"
         android:layout_marginTop="360dp"
         android:layout_marginLeft="50dp"
-        android:background="@drawable/border_radius">
-    </Button>
+        android:background="@drawable/border_radius"/>
 
 
 
