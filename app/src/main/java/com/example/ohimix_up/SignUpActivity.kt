@@ -1,6 +1,5 @@
 package com.example.ohimix_up
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -64,8 +63,9 @@ class SignUpActivity : AppCompatActivity() {
                             Toast.makeText(this, "회원가입 되었습니다", Toast.LENGTH_SHORT).show()
                             val user = auth.currentUser
                             Log.d("mytag", "회원가입 성공 ${user.toString()}")
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
+//                            startActivity(Intent(this,
+//                                MainActivity::class.java))
+                            finish()
                         }
                         else {
                             Log.w("mytag", "회원 가입 실패 (사유 : ${it.exception})")
