@@ -21,7 +21,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".QuizActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +30,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
+        <activity android:name=".QuizActivity"
+            android:noHistory="true"/>
+        <activity android:name=".LandingActivity" />
     </application>
 
 </manifest>
