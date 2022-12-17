@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical"
-    android:gravity="center">
-    <ImageView
-        android:layout_width="200dp"
+    tools:context="com.example.ohimix_up.Login.EmailLogin">
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/mixup_logo" />
+        android:gravity="center"
+        android:text="Hey Dude !"
+        android:textColor="#A8A0FF"
+        android:textStyle="bold"
+        android:textSize="36dp"
+        android:layout_marginTop="160dp" />
+
     <EditText
-        android:id="@+id/loginEmail"
+        android:id="@+id/loginID"
         android:layout_width="320dp"
         android:layout_height="62dp"
         android:background="@drawable/login_edittext"
@@ -33,6 +39,7 @@
         android:layout_marginTop="8dp"
         android:layout_gravity="center"
         android:inputType="textPassword"/>
+
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="320dp"
@@ -43,14 +50,15 @@
         android:text="로그인"
         android:textSize="12dp"
         android:textStyle="bold" />
+
     <Button
-        android:id="@+id/signUpBtn"
+        android:id="@+id/registerBtn"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:text="회원가입"
         android:textSize="12dp"
         android:textStyle="bold"
-        android:background="@drawable/border_radius"
+        android:background="@drawable/login_btn_round"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"/>
 </LinearLayout>

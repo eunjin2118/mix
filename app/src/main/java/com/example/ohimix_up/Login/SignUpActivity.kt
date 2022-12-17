@@ -1,4 +1,4 @@
-package com.example.ohimix_up
+package com.example.ohimix_up.Login
 
 import android.os.Bundle
 import android.util.Log
@@ -6,7 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ohimix_up.R
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
@@ -19,16 +21,16 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-        val nicknameEditText = findViewById<EditText>(R.id.nickname)
         val emailEditText = findViewById<EditText>(R.id.email)
-        val passwordEditText = findViewById<EditText>(R.id.userPw)
-        val passwordCheckEditText = findViewById<EditText>(R.id.userPwChk)
-        findViewById<Button>(R.id.btnSignup).setOnClickListener {
-            val email = emailEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+        val passwordEditText = findViewById<EditText>(R.id.inputPW)
+//        val passwordCheckEditText = findViewById<EditText>(R.id.password_check)
+        val nicknameEditText = findViewById<EditText>(R.id.nickname)
+        findViewById<Button>(R.id.signUpBtn).setOnClickListener {
+        val email = emailEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
 //            val passwordCheckEditText = passwordCheckEditText.text.toString()
-            val nickname = nicknameEditText.text.toString()
-            val profile = ""
+        val nickname = nicknameEditText.text.toString()
+        val profile = ""
             // createUserWithEmailAndPassword 메서드 호출하여 생성할 계정 정보(이메일, 패스워드) 전달
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { // 해당 이메일, 패스워드를 이용하는 계정 생성 완료
@@ -45,7 +47,8 @@ class SignUpActivity : AppCompatActivity() {
                             .child(user.uid)
                             // 이메일과 별명 저장
                             // 상태메세지, 프로필 사진 저장해야함.
-                            .setValue(mapOf("email" to email, "nickname" to "profile" to profile))
+                            .setValue(mapOf("email" to email, "nickname" to
+                                    nickname, "profile" to profile))
                             .addOnCompleteListener {
                                 // 데이터베이스에 계정 정보 등록 완료
                                 if(it.isSuccessful) {
@@ -54,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
                                     Toast.makeText(SignUpActivity@this, "계정 생성 완료 (가입한 이메일의 인증 메일을 확인해주세요.)", Toast.LENGTH_LONG).show()
                                     finish()
                                 } else {
-                                    // 예외가 발생한 경우 전달받은 Task 객체(it)의 exception 속성을 통해 예외 객체 참조 가능, 여기서는 모든 예외를 한 메서드에서 처리하도록 구현함
+                                  // 예외가 발생한 경우 전달받은 Task 객체(it)의 exception 속성을 통해 예외 객체 참조 가능, 여기서는 모든 예외를 한 메서드에서 처리하도록 구현함
                                     userRegisterFailed(it.exception)
                                 }
                             }.addOnFailureListener {
@@ -67,6 +70,9 @@ class SignUpActivity : AppCompatActivity() {
                 }.addOnFailureListener {
                     userRegisterFailed(it)
                 }
+        }
+        findViewById<Button>(R.id.cancel).setOnClickListener {
+            finish()
         }
     }
 

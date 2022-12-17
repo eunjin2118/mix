@@ -1,75 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity"
-    android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:padding="10dp">
+    tools:context="com.example.ohimix_up.Login.SignUpActivity">
+    <!--회원가입 페이지-->
     <TextView
-        android:layout_marginTop="100dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="닉네임"
-        android:textColor="@color/black"/>
-    <EditText
-        android:id="@+id/nickname"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="10dp"
-        android:hint="앱 내에서 사용할 닉네임을 설정해주세요"/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="이메일"
-        android:textColor="@color/black"/>
+        android:gravity="left"
+        android:layout_marginLeft="42dp"
+        android:text="회원가입"
+        android:textColor="#A8A0FF"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:layout_marginTop="100dp" />
+
     <EditText
         android:id="@+id/email"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="10dp"
-        android:hint="로그인 시 사용할 이메일을 입력해주세요"/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="비밀번호 입력"
-        android:textColor="@color/black"/>
+        android:hint="이메일"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"
+        android:paddingLeft="10dp"
+        android:textSize="12dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"/>
+
     <EditText
-        android:id="@+id/userPw"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="10dp"
-        android:hint="5자리 이상 입력해주세요"/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="비밀번호 확인"
-        android:textColor="@color/black"/>
+        android:id="@+id/inputPW"
+        android:paddingLeft="10dp"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"
+        android:hint="비밀번호"
+        android:textSize="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
     <EditText
-        android:id="@+id/userPwChk"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="10dp"
-        android:hint="다시 한번 입력해주세요"/>
+        android:paddingLeft="10dp"
+        android:id="@+id/checkPW"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"
+        android:hint="비밀번호 확인"
+        android:textSize="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+    <EditText
+        android:id="@+id/nickname"
+        android:hint="닉네임"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"
+        android:paddingLeft="10dp"
+        android:textSize="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
     <Button
-        android:id="@+id/btnSignup"
-        android:layout_marginTop="200dp"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:id="@+id/signUpBtn"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:text="회원가입"
+        android:textSize="12dp"
+        android:textStyle="bold"
         android:background="@drawable/border_radius"
-        android:text="회원가입 하기" />
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:text="취소"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:background="@drawable/border_radius"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>
