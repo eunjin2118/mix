@@ -56,7 +56,7 @@ class SignUpActivity : AppCompatActivity() {
                     .addOnFailureListener{
                             e -> Log.d("mytag", "Error writing document", e)
                     }
-
+//
                 signUpBtn.isEnabled = false
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
