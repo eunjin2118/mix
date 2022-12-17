@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/mixup_logo" />
     <EditText
-        android:id="@+id/loginID"
+        android:id="@+id/loginEmail"
         android:layout_width="320dp"
         android:layout_height="62dp"
         android:background="@drawable/login_edittext"
