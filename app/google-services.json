@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "57585192251",
+    "firebase_url": "https://mix-up-6685d-default-rtdb.firebaseio.com",
     "project_id": "mix-up-6685d",
     "storage_bucket": "mix-up-6685d.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "57585192251-41ghdj1rj4hevfo4jq4j4c6lsucdvkqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ohimix_up",
+            "certificate_hash": "9090c00a4004305b50d41d6ad93c714a157a4ac2"
+          }
+        },
         {
           "client_id": "57585192251-fln7tlh1nstfbde63pdbtncum362iecj.apps.googleusercontent.com",
           "client_type": 3
