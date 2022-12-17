@@ -15,13 +15,6 @@ class CommunityFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val dataList = view?.findViewById<RecyclerView>(R.id.post_list)
-
-        dataList?.layoutManager = LinearLayoutManager(requireContext())
-        dataList?.adapter = postListAdapter
-
-        postItemList.add(PostListItem( "mary","2022-12-17","하아이이이"))
-        postListAdapter.notifyDataSetChanged()
 
     }
 
@@ -30,7 +23,16 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_community, container, false)
+        val dataList = view?.findViewById<RecyclerView>(R.id.post_list)
 
+        dataList?.layoutManager = LinearLayoutManager(requireContext())
+        dataList?.adapter = postListAdapter
+
+        postItemList.add(PostListItem( "mary","2022-12-17","하아이이이"))
+        postItemList.add(PostListItem( "mary","2022-12-17","하아이이이"))
+        postItemList.add(PostListItem( "mary","2022-12-17","하아이이이"))
+
+        postListAdapter.notifyDataSetChanged()
         return view
     }
 
