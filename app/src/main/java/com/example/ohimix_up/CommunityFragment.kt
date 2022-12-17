@@ -5,13 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class CommunityFragment : Fragment() {
-
+    val postItemList = arrayListOf<PostListItem>()
+    val postListAdapter = PostListAdapter(postItemList, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val dataList = view?.findViewById<RecyclerView>(R.id.post_list)
+
+        dataList?.layoutManager = LinearLayoutManager(requireContext())
+        dataList?.adapter = postListAdapter
+
+        postItemList.add(PostListItem( "mary","2022-12-17","하아이이이"))
+        postListAdapter.notifyDataSetChanged()
 
     }
 
@@ -27,13 +37,7 @@ class CommunityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dataList = view.findViewById<RecyclerView>(R.id.post_list)
-        val postItemList = arrayListOf<PostListItem>()
-        val postListAdapter = PostListAdapter(postItemList, this)
-        postItemList.apply{
-            add(PostListItem(name = "mary", date = "2022-12-17", post = "하아이이이"))
-        }
-        dataList.adapter = postListAdapter
+
 
 
     }
