@@ -2,6 +2,7 @@ package com.example.ohimix_up;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.RadioButton;
@@ -37,20 +38,17 @@ public class QuizActivity extends AppCompatActivity {
                 switch (checkedId){
                     case R.id.rgO:
                         selectedAnswer = "O";
-                        if(selectedAnswer.equals(QuestionAnswer.correctAnswer[currentQuestionIndex++])){
-                            Toast.makeText(getApplicationContext(), "틀렸습니다.", Toast.LENGTH_SHORT).show();
+                        if(!selectedAnswer.equals(QuestionAnswer.correctAnswer[currentQuestionIndex++])){//맞음
+//                            Toast.makeText(getApplicationContext(), "맞았습니다.", Toast.LENGTH_SHORT).show();
                             score++;
-                        }else{
-                            Toast.makeText(getApplicationContext(), "맞았습니다.", Toast.LENGTH_SHORT).show();
+                        }else{//틀림
                         }
                         rg.clearCheck();
                         break;
                     case R.id.rgX:
                         selectedAnswer = "X";
-                        if(!selectedAnswer.equals(QuestionAnswer.correctAnswer[currentQuestionIndex++])){
-                            Toast.makeText(getApplicationContext(), "맞았습니다.", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(getApplicationContext(), "틀렸습니다.", Toast.LENGTH_SHORT).show();
+                        if(!selectedAnswer.equals(QuestionAnswer.correctAnswer[currentQuestionIndex++])){//맞음
+                        }else{//틀림
                         }
                         rg.clearCheck();
                         break;
@@ -64,13 +62,17 @@ public class QuizActivity extends AppCompatActivity {
         if(currentQuestionIndex<=4){
             txtQuestion.setText(QuestionAnswer.question[questionIndex[currentQuestionIndex]]);
             txtQuestionNum.setText((currentQuestionIndex+1)+"/5");
-        }else finishQuiz();
+        }else{
+            finishQuiz();
+        }
 
     }
 
     void finishQuiz(){
-        String passStatus = "";
-        Toast.makeText(getApplicationContext(), "끝", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, QuizResultActivity.class);
+        intent.putExtra("score", String.valueOf(score));
+//        finishAffinity();
+        startActivities(new Intent[]{intent});
     }
 
     int[] randomNum(){
