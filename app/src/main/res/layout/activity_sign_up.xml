@@ -61,6 +61,7 @@
         android:textSize="10dp"
         android:hint="다시 한번 입력해주세요"/>
     <Button
+        android:id="@+id/btnSignup"
         android:layout_marginTop="200dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"

@@ -44,7 +44,7 @@
         android:textSize="12dp"
         android:textStyle="bold" />
     <Button
-        android:id="@+id/registerBtn"
+        android:id="@+id/signUpBtn"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:text="회원가입"
