@@ -1,4 +1,4 @@
-package com.example.ohimix_up.Login
+package com.example.ohimix_up
 
 class Config {
     companion object {
