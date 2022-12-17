@@ -5,28 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuizActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
     <TextView
+        android:id="@+id/txtQuestionNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1/5" />
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginBottom="30dp"
+        android:text="1/5"/>
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtQuestion"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="결제는 결정할 권한이 있는 자가 부하 직원이 제출한 안건을 허가하거나 승인하는 것 이다" />
+        android:text="결제는 결정할 권한이 있는 자가 부하 직원이 제출한 안건을 허가하거나 승인하는 것 이다"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"/>
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp">
         <RadioButton
             android:id="@+id/rgO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="O" />
+            android:button="@null"
+            android:background="@drawable/bg_radio_button"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="O"
+            android:textColor="#93B1FF"
+            android:elevation="4dp" />
         <RadioButton
-            android:id="@+id/rdX"
+            android:id="@+id/rgX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:button="@null"
+            android:background="@drawable/bg_radio_button"
+            android:gravity="center"
+            android:textColor="#FF7A7A"
+            android:elevation="4dp"
             android:text="X" />
     </RadioGroup>
 </LinearLayout>
