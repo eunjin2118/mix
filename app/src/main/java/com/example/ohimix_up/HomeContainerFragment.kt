@@ -6,9 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.ohimix_up.HomeFragment
-import com.example.ohimix_up.R
-import com.example.ohimix_up.CompanyFragment
-import com.example.ohimix_up.NounFragment
 
 class HomeContainerFragment : Fragment() {
 
@@ -22,7 +19,6 @@ class HomeContainerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         childFragmentManager.beginTransaction().add(R.id.container, HomeFragment()).commit()
     }
 

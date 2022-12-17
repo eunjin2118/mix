@@ -2,6 +2,7 @@ package com.example.ohimix_up
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.ohimix_up.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +40,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
+
+    fun fragmentIntent(){
+        val transaction = this.supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fl_container, CompanyFragment())
+    }
+
 }

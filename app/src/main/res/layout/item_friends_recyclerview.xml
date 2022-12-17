@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="4dp"
+    app:contentPadding="10dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/word1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="금세, 금새" />
+
+        <TextView
+            android:id="@+id/word1Mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="#7d7d7d"
+            android:text="asdfasdf" />
+    </LinearLayout>
+    <!--    <View-->
+    <!--        android:id="@+id/shadow"-->
+    <!--        android:layout_width="fill_parent"-->
+    <!--        android:layout_height="3dp"-->
+    <!--        android:background="@drawable/shadow_item">-->
+    <!--    </View>-->
+</androidx.cardview.widget.CardView>

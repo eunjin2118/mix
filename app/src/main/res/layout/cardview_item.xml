@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_margin="20dp">
+
+    <GridLayout
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:rowCount="2">
+
+        <TextView
+            android:layout_rowSpan="2"
+            android:text="Today\nMix-up\nWord" />
+        <TextView
+            android:id="@+id/txtWord1"
+            android:layout_column="4"
+            android:text="금세" />
+
+        <TextView
+            android:id="@+id/txtWord1Mean"
+            android:layout_column="5"
+            android:layout_marginLeft="10dp"
+            android:text="'금시에'의 준말" />
+
+        <TextView
+            android:id="@+id/txtWord2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="'금새" />
+
+        <TextView
+            android:id="@+id/txtWord2Mean"
+            android:layout_column="5"
+            android:layout_marginLeft="10dp"
+            android:text="물가의 높낮이" />
+    </GridLayout>
+</LinearLayout>
