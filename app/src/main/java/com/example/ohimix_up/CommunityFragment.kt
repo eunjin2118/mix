@@ -29,7 +29,10 @@ class CommunityFragment : Fragment() {
 
         val dataList = view.findViewById<RecyclerView>(R.id.post_list)
         val postItemList = arrayListOf<PostListItem>()
-        val postListAdapter = PostListAdapter(postItemList, requireParentFragment())
+        val postListAdapter = PostListAdapter(postItemList, this)
+        postItemList.apply{
+            add(PostListItem(name = "mary", date = "2022-12-17", post = "하아이이이"))
+        }
         dataList.adapter = postListAdapter
 
 
