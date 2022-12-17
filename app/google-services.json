@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "57585192251",
+    "project_id": "mix-up-6685d",
+    "storage_bucket": "mix-up-6685d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57585192251:android:67ec07bd6a4fd2d688fb1e",
+        "android_client_info": {
+          "package_name": "com.example.ohimix_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57585192251-fln7tlh1nstfbde63pdbtncum362iecj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACwajN2XpsyFFMFESxVMxDS5Wv5dSs9pc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57585192251-fln7tlh1nstfbde63pdbtncum362iecj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
