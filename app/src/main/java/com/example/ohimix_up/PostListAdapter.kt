@@ -15,7 +15,6 @@ class PostListAdapter(val itemList: ArrayList<PostListItem>, val fragment: Fragm
     // (1) 아이템 레이아웃과 결합
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_post, parent, false)
-
         return ViewHolder(view)
     }
 
@@ -33,7 +32,7 @@ class PostListAdapter(val itemList: ArrayList<PostListItem>, val fragment: Fragm
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.user_id)
-        val date: TextView = itemView.findViewById(R.id.user_id)
+        val date: TextView = itemView.findViewById(R.id.post_date)
         val post: TextView = itemView.findViewById(R.id.post)
     }
 
