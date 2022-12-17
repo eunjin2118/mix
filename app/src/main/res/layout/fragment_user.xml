@@ -5,10 +5,77 @@
     android:layout_height="match_parent"
     tools:context=".UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/user_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/mixup_logo"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="80dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/border_radius"/>
+    
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="370dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/settings"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="200dp"
+        android:text="김치"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="240dp"
+        android:text="s2131@e-mirim.hs.kr"
+        android:textSize="15dp"
+        android:textColor="#7D7D7D"/>
+
+    <TextView
+        android:id="@+id/user_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="270dp"
+        android:text="퀴즈 맞춘횟수 : 5회"
+        android:textSize="15dp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/border_radius">
+    </Button>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="310dp"
+        android:src="@drawable/star" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/border_radius">
+    </Button>
+
+
 
 </FrameLayout>
