@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
             android:id="@+id/user_id"
             android:layout_width="wrap_content"
@@ -38,6 +39,16 @@
             app:queryHint="검색어를 입력하시오" />
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/profile_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.958"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="200dp"
             android:layout_height="150dp"
@@ -52,7 +63,7 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/select1_box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -61,6 +72,7 @@
 
         <ImageButton
             android:id="@+id/company_btn"
+            android:background="@android:color/transparent"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="52dp"
@@ -72,6 +84,7 @@
 
         <ImageButton
             android:id="@+id/home_btn"
+            android:background="@android:color/transparent"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="52dp"
@@ -83,6 +96,7 @@
 
         <ImageButton
             android:id="@+id/school_btn"
+            android:background="@android:color/transparent"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="52dp"
@@ -93,6 +107,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="192dp"
@@ -101,6 +116,45 @@
             app:layout_constraintHorizontal_bias="0.131"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+        <ImageButton
+            android:id="@+id/noun_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/noun_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/ad_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ad_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/verb_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/verb_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
