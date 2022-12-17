@@ -14,7 +14,7 @@
         android:theme="@style/Theme.OhImixup"
         tools:targetApi="31">
         <activity
-            android:name=".LandingActivity"
+            android:name=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
