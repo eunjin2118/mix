@@ -16,6 +16,7 @@
         android:text="닉네임"
         android:textColor="@color/black"/>
     <EditText
+        android:id="@+id/nickname"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -26,14 +27,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        android:text="아이디"
+        android:text="이메일"
         android:textColor="@color/black"/>
     <EditText
+        android:id="@+id/email"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="10dp"
-        android:hint="로그인 시 사용할 아이디를 사용해주세요"/>
+        android:hint="로그인 시 사용할 이메일을 입력해주세요"/>
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -42,6 +44,7 @@
         android:text="비밀번호 입력"
         android:textColor="@color/black"/>
     <EditText
+        android:id="@+id/userPw"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -55,6 +58,7 @@
         android:text="비밀번호 확인"
         android:textColor="@color/black"/>
     <EditText
+        android:id="@+id/userPwChk"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
