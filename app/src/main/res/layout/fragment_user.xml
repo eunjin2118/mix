@@ -54,27 +54,23 @@
         android:textColor="@color/black"/>
 
     <Button
-        android:layout_width="100dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="310dp"
         android:layout_marginLeft="50dp"
-        android:background="@drawable/border_radius">
-    </Button>
-
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="310dp"
-        android:src="@drawable/star" />
-
+        android:drawableLeft="@drawable/bookmark_icon"
+        android:backgroundTint="#CA7700"
+        android:textSize="10dp"
+        android:text="단어장 즐겨찾기"/>
     <Button
-        android:layout_width="100dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="360dp"
         android:layout_marginLeft="50dp"
-        android:background="@drawable/border_radius">
-    </Button>
+        android:drawableLeft="@drawable/login_logo"
+        android:backgroundTint="#930000"
+        android:textSize="10dp"
+        android:text="로그아웃"/>
 
 
 
