@@ -14,6 +14,13 @@
         android:theme="@style/Theme.OhImixup"
         tools:targetApi="31">
         <activity
+            android:name=".CompanyActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".QuizResultActivity"
             android:exported="false">
             <meta-data
@@ -30,8 +37,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".QuizActivity"
-            android:noHistory="true"/>
+        <activity
+            android:name=".QuizActivity"
+            android:noHistory="true" />
         <activity android:name=".LandingActivity" />
     </application>
 
