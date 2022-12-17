@@ -1,5 +1,6 @@
 package com.example.ohimix_up
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,63 +29,45 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         signUpBtn.setOnClickListener {
-            val nickname = findViewById<EditText>(R.id.nickname_input).text.toString()
             val email = findViewById<EditText>(R.id.email_input).text.toString()
             val password = findViewById<EditText>(R.id.password_input).text.toString()
             val passwordCheck = findViewById<EditText>(R.id.password_check).text.toString()
+            val nickname = findViewById<EditText>(R.id.nickname_input).text.toString()
 
-            if(email.equals("")||password.equals("")||nickname.equals("")||passwordCheck.equals("")){
-                Toast.makeText(baseContext, "모두 필수로 입력해야합니다.", Toast.LENGTH_SHORT).show()
-            }else if(password.length < 6){
-                Toast.makeText(this, "비밀번호는 6자리 이상이어야합니다.", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                val user = hashMapOf(
-                    "nickname" to nickname,
-                    "email" to email,
-                    "password" to password
-                )
+            val user = hashMapOf(
+                "nickname" to nickname,
+                "email" to email,
+                "password" to password
+            )
 
-                Log.d("mytag", "회원가입 성공 ${user}")
+            db.collection("users")
+                .document()
+                .set(user)
+                .addOnSuccessListener {
+                    Log.d("mytag", "DocumentSnapshot successfully written!")
+                }
+                .addOnFailureListener{
+                        e -> Log.d("mytag", "Error writing document", e)
+                }
 
-                db.collection("users").document(email)
-                    .set(user)
-                    .addOnSuccessListener {
-                        Log.d("mytag", "DocumentSnapshot successfully written!")
+            signUpBtn.isEnabled = false
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        Toast.makeText(this, "회원가입 되었습니다", Toast.LENGTH_SHORT).show()
+                        val au = auth.currentUser
+                        Log.d("mytag", "회원가입 성공 ${au.toString()}")
+                        finish()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Log.w("mytag", "회원 가입 실패 (사유 : ${it.exception})")
+                        Toast.makeText(baseContext, "회원 가입 실패", Toast.LENGTH_SHORT).show()
+                        signUpBtn.isEnabled = true // 버튼 다시 누르기
                     }
-                    .addOnFailureListener{
-                            e -> Log.d("mytag", "Error writing document", e)
-                    }
-//
-                signUpBtn.isEnabled = false
-                auth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            Toast.makeText(this, "회원가입 되었습니다", Toast.LENGTH_SHORT).show()
-                            val user = auth.currentUser
-                            Log.d("mytag", "회원가입 성공 ${user.toString()}")
-//                            startActivity(Intent(this,
-//                                MainActivity::class.java))
-                            finish()
-                        }
-                        else {
-                            Log.w("mytag", "회원 가입 실패 (사유 : ${it.exception})")
-                            Toast.makeText(baseContext, "회원 가입 실패", Toast.LENGTH_SHORT).show()
-                            signUpBtn.isEnabled = true // 버튼 다시 누르기
-                        }
-                    }
-            }
+                }
         }
 
 
-    }
-    fun sendEmailVerification() {
-        FirebaseAuth.getInstance().currentUser!!.sendEmailVerification().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-//                Toast("확인 메일을 전송했습니다.")
-            } else {
-//                Toast(task.exception)
-            }
-        }
     }
 }
