@@ -40,9 +40,8 @@ class SignUpActivity : AppCompatActivity() {
                 "password" to password
             )
 
-            Log.d("mytag", "회원가입 성공 ${user.toString()}")
-
-            db.collection("users").document(email)
+            db.collection("users")
+                .document()
                 .set(user)
                 .addOnSuccessListener {
                     Log.d("mytag", "DocumentSnapshot successfully written!")
@@ -56,10 +55,10 @@ class SignUpActivity : AppCompatActivity() {
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
                         Toast.makeText(this, "회원가입 되었습니다", Toast.LENGTH_SHORT).show()
-                        val user = auth.currentUser
-                        Log.d("mytag", "회원가입 성공 ${user.toString()}")
+                        val au = auth.currentUser
+                        Log.d("mytag", "회원가입 성공 ${au.toString()}")
                         finish()
-                        val intent = Intent(this, HomeFragment::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
                         Log.w("mytag", "회원 가입 실패 (사유 : ${it.exception})")
