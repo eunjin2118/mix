@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
 class CommunityFragment : Fragment() {
 
@@ -18,10 +19,19 @@ class CommunityFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_community, container, false)
+        val view = inflater.inflate(R.layout.fragment_community, container, false)
+
+        return view
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val dataList = view.findViewById<RecyclerView>(R.id.post_list)
+        val postItemList = arrayListOf<PostListItem>()
+        val postListAdapter = PostListAdapter(postItemList, requireParentFragment())
+        dataList.adapter = postListAdapter
+
+
     }
 }
